@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
             coupontwo : '#F78C9C',
             mobilemenu : '#f7f8f8',
             body :'',
-            buttoncoloe : 'rgba(29, 209, 0, 0.15)',
+            buttoncolor : 'rgba(29, 209, 0, 0.15)',
           },
           fontFamily : {
             Raleway : 'Raleway',
@@ -45,7 +45,49 @@
   </script>
 
 </head>
-<body>
+<body class="w-11/12 mx-auto mt-5">
+  <header>
+    <nav>
+      <div class="navbar bg-base-100">
+    <div class="navbar-start">
+    <a class="btn btn-ghost text-3xl font-extrabold"> <i class="fa-solid fa-bus"></i> Dublin Bus</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a>Home</a></li>
+      <li><a>About</a></li>
+      <li><a>Destination</a></li>
+      <li><a>Search</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end font-bold text-3xl invisible md:visible ">
+    <a class="btn font-bold text-xl text-primary border-buttoncolor">Bus <img src="./images/bus-icon.png" alt="" srcset="">  </a>
+    
+  </div>
+     <div class="dropdown"> 
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow right-0">
+         <li><a>Home</a></li>
+        <li><a>About</a></li>
+        <li><a>Destination</a></li>
+         <li><a>Search</a></li>
+      </ul>
+    </div>
+</div>
+</div>
+
+    </nav>
+  </header>
+  <main>
+
+  </main>
+  <footer>
+
+  </footer>
   
   
 
