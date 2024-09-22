@@ -5,8 +5,13 @@ const displaySelectedSeat = document.getElementById('displaySelectedSeat');
 
 const availableSeat = document.getElementById('available-seat');
 
+const totalTicketPrice = document.getElementById('total-ticket-price');
+
 
 const totalSelectedSeat = [];
+
+let totalPrice = 0;
+
 function selectedSeatHandler(event){
 
   event.classList.add('bg-primary');
@@ -20,12 +25,16 @@ function selectedSeatHandler(event){
   availableSeat.innerText = updateAvailableSeat ;
   
   
-
-  selectedSeat.innerHTML = `
+  selectedSeat.innerHTML += `
   <li class="text-base font-normal flex justify-around">
     <span>${event.innerText}</span>
     <span>economy</span>
     <span> $550</span>
   </li>
 `;
+
+totalPrice += 550;
+totalTicketPrice.innerText = totalPrice;
+
+
 }
