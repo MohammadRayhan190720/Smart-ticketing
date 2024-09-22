@@ -5,6 +5,7 @@ const availableSeat = document.getElementById('available-seat');
 const totalTicketPrice = document.getElementById('total-ticket-price');
 const couponInput = document.getElementById('coupon-input');
 const couponBtn = document.getElementById('coupon-btn');
+const ticketDaufaltText = document.getElementById('ticket-daufalt-text');
 
 
 const totalSelectedSeat = [];
@@ -26,13 +27,16 @@ function selectedSeatHandler(event){
     const updateAvailableSeat = availableSeatNumber - 1;
     availableSeat.innerText = updateAvailableSeat;
 
+    // remove ticket-daufalt-text
+    ticketDaufaltText.classList.add('hidden');
+
     selectedSeat.innerHTML += `
   <li class="text-base font-normal flex justify-around">
     <span>${event.innerText}</span>
     <span>economy</span>
     <span> $550</span>
   </li>
-`;
+ `;
 
     totalPrice += 550;
     totalTicketPrice.innerText = totalPrice;
