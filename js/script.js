@@ -11,27 +11,22 @@ const totalSelectedSeat = [];
 let totalPrice = 0;
 
 function selectedSeatHandler(event){
-  // validation
   const value = event.innerText;
 
   if(totalSelectedSeat.includes(value)){
     return alert('Seat already Booked');
-  }
+  } else if(totalSelectedSeat.length < 4){
+    event.classList.add("bg-primary");
+    event.classList.add("text-white");
 
+    totalSelectedSeat.push(event.innerText);
+    displaySelectedSeat.innerText = totalSelectedSeat.length;
 
+    const availableSeatNumber = parseInt(availableSeat.innerText);
+    const updateAvailableSeat = availableSeatNumber - 1;
+    availableSeat.innerText = updateAvailableSeat;
 
-  event.classList.add('bg-primary');
-  event.classList.add('text-white');
-
-  totalSelectedSeat.push(event.innerText);
-  displaySelectedSeat.innerText = totalSelectedSeat.length;
-
-  const availableSeatNumber = parseInt(availableSeat.innerText);
-  const updateAvailableSeat = availableSeatNumber - 1;
-  availableSeat.innerText = updateAvailableSeat ;
-  
-  
-  selectedSeat.innerHTML += `
+    selectedSeat.innerHTML += `
   <li class="text-base font-normal flex justify-around">
     <span>${event.innerText}</span>
     <span>economy</span>
@@ -39,13 +34,18 @@ function selectedSeatHandler(event){
   </li>
 `;
 
-totalPrice += 550;
-totalTicketPrice.innerText = totalPrice;
+    totalPrice += 550;
+    totalTicketPrice.innerText = totalPrice;
 
-// coupon condition
-if(totalSelectedSeat.length > 3){
-  couponInput.removeAttribute('disabled');
-  couponBtn.removeAttribute('disabled');
-};
+    // coupon condition
+    if (totalSelectedSeat.length > 3) {
+      couponInput.removeAttribute("disabled");
+      couponBtn.removeAttribute("disabled");
+    }
+  }else{
+    return alert("Maximum Seats Booked")
+  };
+
+ 
 
 }
