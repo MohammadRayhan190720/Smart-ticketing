@@ -1,11 +1,10 @@
 // finding element
 const selectedSeat = document.getElementById('selectedSeat');
-
 const displaySelectedSeat = document.getElementById('displaySelectedSeat');
-
 const availableSeat = document.getElementById('available-seat');
-
 const totalTicketPrice = document.getElementById('total-ticket-price');
+const couponInput = document.getElementById('coupon-input');
+const couponBtn = document.getElementById('coupon-btn');
 
 
 const totalSelectedSeat = [];
@@ -36,5 +35,10 @@ function selectedSeatHandler(event){
 totalPrice += 550;
 totalTicketPrice.innerText = totalPrice;
 
+// coupon condition
+if(totalSelectedSeat.length > 3){
+  couponInput.removeAttribute('disabled');
+  couponBtn.removeAttribute('disabled');
+};
 
 }
