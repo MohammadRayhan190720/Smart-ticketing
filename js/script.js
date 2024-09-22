@@ -7,6 +7,7 @@ const couponInput = document.getElementById('coupon-input');
 const couponBtn = document.getElementById('coupon-btn');
 const ticketDaufaltText = document.getElementById('ticket-daufalt-text');
 const grandTotal = document.getElementById('grand-total');
+const displayCouponPrice = document.getElementById("display-coupon-price");
 
 
 const totalSelectedSeat = [];
@@ -69,6 +70,17 @@ document.getElementById("coupon-btn").addEventListener('click',function(){
     couponSave = totalPrice * 0.20;
 
   }
+  // showcouponprice
+  displayCouponPrice.innerHTML = `
+ <div class = " text-lg font-bold flex justify-between">
+ <p >Discount</p>
+     <p>
+       <span>-BDT :</span>
+       <span>${couponSave.toFixed(2)}</span>
+    </p> </div>
+  
+ 
+  `;
 
   const grandTotalPrice = totalPrice - couponSave;
   grandTotal.innerText = grandTotalPrice.toFixed(2) ;
