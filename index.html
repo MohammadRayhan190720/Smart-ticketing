@@ -536,7 +536,21 @@
           
         </div>
         <div class="form-control mt-6">
-          <button class="btn bg-primary">Next</button>
+          <button onclick="my_modal_1.showModal()" class="btn bg-primary">Next</button>
+          
+           <!-- Open the modal using ID.showModal() method -->
+     <dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+     <h3 class="text-lg font-bold">Hello!</h3>
+     <p class="py-4">Press ESC key or click the button below to close</p>
+     <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+    </div>
+   </dialog>
         </div>
 
         <div class="flex justify-between mt-5">
@@ -565,9 +579,9 @@
   </main>
   <footer class="bg-secondary mt-16  text-white pb-20 ">
     <div class="w-4/5 mx-auto flex justify-between items-center pt-16">
-      <div>
+      <div class="w-4/5">
         <a class="btn btn-ghost text-3xl font-extrabold"> <i class="fa-solid fa-bus"></i> Dublin Bus</a>
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis hic ducimus magnam, iusto maiores similique harum? Fuga ipsam ex, cupiditate temporibus quam aliquid nisi fugiat ratione veniam quidem soluta.</P>
+        <P class="w-4/5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis hic ducimus magnam, iusto maiores similique harum? Fuga ipsam ex, cupiditate temporibus quam aliquid nisi fugiat ratione veniam quidem soluta.</P>
       </div>
       <div class="flex justify-center items-center gap-4">
         <h3>Dounload Our app</h3>
@@ -575,6 +589,9 @@
       </div>
 
     </div>
+    <div class="border border-b-1 border-dashed mt-3"></div>
+
+  
 
 
 
