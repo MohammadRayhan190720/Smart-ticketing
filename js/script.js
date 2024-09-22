@@ -8,10 +8,17 @@ const couponBtn = document.getElementById('coupon-btn');
 
 
 const totalSelectedSeat = [];
-
 let totalPrice = 0;
 
 function selectedSeatHandler(event){
+  // validation
+  const value = event.innerText;
+
+  if(totalSelectedSeat.includes(value)){
+    return alert('Seat already Booked');
+  }
+
+
 
   event.classList.add('bg-primary');
   event.classList.add('text-white');
