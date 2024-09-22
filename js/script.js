@@ -6,6 +6,7 @@ const totalTicketPrice = document.getElementById('total-ticket-price');
 const couponInput = document.getElementById('coupon-input');
 const couponBtn = document.getElementById('coupon-btn');
 const ticketDaufaltText = document.getElementById('ticket-daufalt-text');
+const grandTotal = document.getElementById('grand-total');
 
 
 const totalSelectedSeat = [];
@@ -39,7 +40,7 @@ function selectedSeatHandler(event){
  `;
 
     totalPrice += 550;
-    totalTicketPrice.innerText = totalPrice;
+    totalTicketPrice.innerText = totalPrice.toFixed(2);
 
     // coupon condition
     if (totalSelectedSeat.length > 3) {
@@ -50,6 +51,25 @@ function selectedSeatHandler(event){
     return alert("Maximum Seats Booked")
   };
 
- 
-
 }
+
+// coupon discount function
+document.getElementById("coupon-btn").addEventListener('click',function(){
+  const couponInputValue = couponInput.value;
+  let couponSave = 0;
+
+   if (couponInputValue !== "NEW15" && couponInputValue !== "couple 20"){
+    return alert("Your Input coupon code in invalid");
+   }
+  else if( couponInputValue === "NEW15"){
+    couponSave = totalPrice * .15;
+
+  }
+  else if( couponInputValue === "couple 20"){
+    couponSave = totalPrice * 0.20;
+
+  }
+
+  const grandTotalPrice = totalPrice - couponSave;
+  grandTotal.innerText = grandTotalPrice.toFixed(2) ;
+})
