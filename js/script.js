@@ -16,6 +16,8 @@ function selectedSeatHandler(event){
   displaySelectedSeat.innerText = totalSelectedSeat.length;
 
   const availableSeatNumber = parseInt(availableSeat.innerText);
+  const updateAvailableSeat = availableSeatNumber - 1;
+  availableSeat.innerText = updateAvailableSeat ;
   
   
 
